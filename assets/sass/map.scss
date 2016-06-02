@@ -1,0 +1,32 @@
+@import 'styles';
+
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  border-bottom: 1px solid $black2;
+  float: left;
+  margin: 0;
+  width: 100%;
+}
+
+#social{
+  bottom: 0;
+  float: right;
+  margin: 0;
+  padding: $commonPadding*3;
+  position: fixed;
+  right: $commonPadding*3;
+  width: 200px;
+}
+
+#console {
+  clear: both;
+  height: 200px;
+  margin: 0;
+  padding: $commonPadding*3;
+  width: 100%;
+}

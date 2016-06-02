@@ -1,0 +1,15 @@
+@import 'styles';
+
+div.bg {
+	background: url('/images/nukebg.jpg') 50% 50% no-repeat fixed;
+	background-size: cover;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+
+.wrapper {
+	background: rgba(0, 0, 0, 0.5);
+	margin: $commonPadding*6 auto;
+	padding-bottom: $commonPadding*6;
+}

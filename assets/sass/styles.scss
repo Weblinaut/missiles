@@ -1,0 +1,119 @@
+@import "partials/imports";
+
+/* Common element styles */
+html,
+body {
+	background-color: $white1;
+	font-size: 16px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+body {
+	h1 {
+		color: $white1;
+	}
+}
+
+/*****************
+ Links
+*****************/
+a {
+	color: $orange2;
+	text-decoration: none;
+	transition: color $medSpeed ease-out;
+	-webkit-transition: color $medSpeed ease-out;
+
+	&:hover {
+	  color: $orange1;
+	  text-decoration: none;
+	  transition: color $medSpeed ease-out;
+	  -webkit-transition: color $medSpeed ease-out;
+	}
+}
+
+/*****************
+ Helpers
+*****************/
+.db {
+  display: block !important;
+}
+
+.di {
+  display: inline !important;
+}
+
+.dib {
+  display: inline-block !important;
+}
+
+//Margin-bottoms for mb4, mb8, mb12, mb16, mb20, mb24
+@for $i from 1 through 6 {
+	$marginNum: $commonPadding * $i;
+	$marginNum: str-replace($marginNum, 'px', '');//get rid of px after commonPadding
+
+	.mb#{$marginNum} {
+		margin-bottom: $commonPadding * $i !important;
+	}
+}
+
+//Margin-tops for mt4, mt8, mt12, mt16, mt20, mt24
+@for $i from 1 through 6 {
+  $marginNum: $commonPadding * $i;
+  $marginNum: str-replace($marginNum, 'px', '');
+
+  .mt#{$marginNum} {
+	margin-top: $commonPadding * $i !important;
+  }
+}
+
+
+//Padding-tops for pt4, pt8, pt12, pt16, pt20, pt24
+@for $i from 1 through 6 {
+  $paddingNum: $commonPadding * $i;
+  $paddingNum: str-replace($paddingNum, 'px', '');
+
+  .pt#{$paddingNum} {
+	padding-top: $commonPadding * $i !important;
+  }
+}
+
+//Padding-bottom for pb4, pb8, pb12, pb16, pb20, pb24
+@for $i from 1 through 6 {
+  $paddingNum: $commonPadding * $i;
+  $paddingNum: str-replace($paddingNum, 'px', '');
+
+  .pb#{$paddingNum} {
+	padding-bottom: $commonPadding * $i !important;
+  }
+}
+
+/*****************
+ Messaging
+*****************/
+.msg {
+	border: 1px solid $white1;
+	color: $white2;
+	margin-bottom: $commonPadding*3;
+	text-align: center;
+
+	&.success {
+	  background-color: $successGreenBg;
+	  background: linear-gradient(to bottom, $successGreenBgLight 0%,$successGreenBg 50%, $successGreenBgLight 100%);
+	}
+
+	&.fail {
+	  background-color: $failRedBg;
+	  background: linear-gradient(to bottom, $failRedBgLight 0%,$failRedBg 50%, $failRedBgLight 100%);
+	}
+
+}
+
+/*
+Common BEM Styles
+Block (Main parent block)
+Element (Child placed inside of block, underscore _ )
+Modifier (Color, state, size (big small) things unrelated to the module, uses dash - )
+*/

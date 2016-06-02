@@ -1,0 +1,29 @@
+@function to-string($value) {
+	@return inspect($value);
+}
+
+@function to-bool($value) {
+	@return not ($value or $value == "" or $value == 0 or $value == null);
+}
+
+/** Replace `$search` with `$replace` in `$string`
+ @param {String} $string - Initial string
+ @param {String} $search - Substring to replace
+ @param {String} $replace ('') - New value
+ @return {String} - Updated string
+*/
+
+@function str-replace($string, $search, $replace: '') {
+	$string: to-string($string);
+	$search: to-string($search);
+	$replace: to-string($replace);
+
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
