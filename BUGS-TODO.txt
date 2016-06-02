@@ -1,3 +1,0 @@
-- Register (2ndary ghost buttons), when you click down, and move mouse away, the mouseup,
-it takes a style (blue color), but is showing gray in computed tab of CDT
-
